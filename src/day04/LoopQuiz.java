@@ -2,24 +2,21 @@ package day04;
 
 import java.util.Scanner;
 
-public class Quiz2 {
+public class LoopQuiz {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         int count = 0;
         int ncount = 0;
-        System.out.println("~~~~~~~난이도를 입력하세요 [상, 중, 하]~~~~~~");
-        System.out.println("----------------------------------");
-        String rank = scanner.next();
+        System.out.println("~~~~~~난이도를 입력하세요 [상, 중, 하]~~~~~~");
+        System.out.println("===============================================");
+        String rank = sc.next();
+
         while (true) {
+            //첫번째 넘버와 두번째 넘버를 랜덤으로 조합하기 위해 int n1,n2를 랜덤 변수를 지정.
             int n1 = (int) (Math.random() * 100) + 1;
             int n2 = (int) (Math.random() * 100) + 1;
-            //랜덤값 0 1 2
-            //랜덤값 0일때 if 문제 +로 출력 답도 ran1 + ran2
-            //1일때 문제 -로 출력 답도 ran1 - ran2
-
-
             // case 로 난이도 구별
             switch (rank) {
                 case "상":
@@ -38,8 +35,11 @@ public class Quiz2 {
                     System.out.println("꺼지세요");
                     break;
             }
+            //연산자 + , - , * 를 랜덤으로 받기위해 스트링(문자열)로 변수를 저장하기.
             int n = (int) (Math.random() * 3);
+            //스트링 변수에는 x를 지정하고 해당 대입자는 비워두기.?
             String x = "";
+
 
             int realAnswer = 0;
             switch (n) {
@@ -67,28 +67,23 @@ public class Quiz2 {
                     realAnswer = n1 * n2;
                     break;
             }
-
-            int total = n1 + n2;
-
             System.out.printf("%d %s %d = ? \n", n1, x, n2);
 
 
-            int answer = scanner.nextInt();
+            int answer = sc.nextInt();
 
             if (answer == 0) {
                 System.out.printf("정답횟수는 %d, 오답횟수는 %d\n", count, ncount);
                 break;
             }
 
-            if (answer == total) {
+            if (answer == realAnswer) {
                 System.out.println("정답입니다!!");
                 System.out.println("----------------------------------");
                 count++;
-            } else if (answer != total) {
+            } else {
                 System.out.println("틀렸어새끼야");
-                System.out.println("----------------------------------");
                 ncount++;
-                continue;
             }
         }
 
