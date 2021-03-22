@@ -21,10 +21,10 @@ public class array {
         for (int i = 0; i < scores.length; i++) {
             total += scores[i];
         }
-            for (double avg : scores) {
-                avg = total / (double)6;
-                System.out.printf("총점: %d , 평점: %f", total, avg);
-
-            }
+        for (float avg : scores) {
+            avg = total / 6.0f;
+            System.out.printf("총점: %d , 평점: %.2f", total, avg);
+            break;
         }
+    }
     }
