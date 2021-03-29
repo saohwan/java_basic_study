@@ -41,7 +41,16 @@ public class Phone {
     //기능: 객체의 행위
     //메서드(method) : static을 붙이지 마세요.
 
+    //계산기 기능
+    void calculator3(int n, int y) {
+        if (!isOn) {
+            System.out.println("전원을 먼저 켜세요");
+            return;
+        }
+        System.out.println("계산기 덧샘");
+        System.out.println("n + y 의 합은 : " + (n + y));
 
+    }
     //전원 켜는 기능
     void powerOn() {
         isOn = true;

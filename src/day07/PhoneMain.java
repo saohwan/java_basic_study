@@ -29,6 +29,7 @@ public class PhoneMain {
         iPhoneX.powerOn();
         galaxyS20.sendMessage(iPhoneX,"야 밥먹었냐?");
 
+
         iPhoneX.checkMessages();
 
         iPhoneX.sendMessage(galaxyS20, "어먹었다.");
@@ -41,6 +42,9 @@ public class PhoneMain {
         galaxyS20.sendMessage(iPhoneX, "에베베베베베ㅔ베");
         galaxyS20.sendMessage(iPhoneX, "에베베베베베ㅔ베");
         galaxyS20.sendMessage(iPhoneX, "에베베베베베ㅔ베");
+
+        galaxyS20.powerOn();
+        galaxyS20.calculator3(2,3);
 
         //        galaxyS20.model = "갤럭시S20";
 //        galaxyS20.color = "펄 블루";
